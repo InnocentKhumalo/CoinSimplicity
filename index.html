@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinSimplicity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"> </script>
+</head>
+<body>
+    <header>
+
+            <svg  width="100%" height="140" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+ <!-- Define gradients -->
+ <defs>
+<linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:#ff7e5f; stop-opacity:1" />
+<stop offset="100%" style="stop-color:#feb47b; stop-opacity:1" />
+ </linearGradient>
+ <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+   <stop offset="0%" style="stop-color:#86a8e7; stop-opacity:1" />
+   <stop offset="100%" style="stop-color:#91eae4; stop-opacity:1" />
+  </linearGradient>
+ </defs>
+
+ <!-- Text with gradients and styling -->
+ <text x="3%" y="31%" dominant-baseline="middle" text-anchor="middle" font-family="baskerville" font-size="80" font-weight="bold" font-style="italic" fill="url(#gradient1)">
+  Coin
+ </text>
+ <text x="5%" y="-5%" dy="1.2em" dominant-baseline="middle" text-anchor="middle" font-family="Futura" font-size="70" font-weight="bold" font-style="italic" fill="url(#gradient2)">
+  Simplicity
+ </text>
+</svg>
+
+<nav>
+    <i class="fa fa-ellipsis-v" onclick="showAdditionalSettings()"></i>
+    <section id="dots">
+        <li>Help & Support</li>
+        <li>Rate & Review</li>
+        <li>Share App</li>
+        <li>Terms & Conditions</li>
+        <li>Feedback</li>
+        <li onclick="showSettings()" >Settings</li>
+    </section>
+    
+</nav>
+
+    </header>
+
+    <section id="logo-image">
+        <img src="images/LOGO.jpg" alt="logo image">
+    </section>
+    
+    <section id="Section-container">
+        <section id="section-item">
+            <img src="images/icon1.jpg" alt="icon1">
+            <p>Counting your Wealth, one coin at a time. Accurate coin counting made easy.</p>
+        </section>
+        <section id="section-item">
+            <img src="images/icon2.jpg" alt="icon2">
+            <p>Fast, reliable and secure. Count, track and manage your coins today.</p>
+        </section>
+        <section id="section-item">
+            <img src="images/icon3.jpg" alt="icon3">
+            <p>Easily count your coins, anytime, anywhere. Simple and accurate.</p>
+        </section>
+        <section id="section-item">
+            <img src="images/last icon.jpg" alt="icon4">
+            <p>Start saving time! Effortless coin counting at your fingertips.</p>
+        </section>
+    </section>
+<section id="uploader">
+    <label for="uploaderButton"><span>Hint!</span> <br> Make sure that all coins appear well on the captured picture,
+    coins that are not clear or visible might cause errors with the result. </label>
+    <video id="video" autoplay></video>
+    <button onclick="captureImage()">Capture Coins</button>
+</section>
+<section class="history" id="history">
+    <h3>
+        Coin History
+    </h3>
+    
+<div id="history-item">
+
+</div>
+</section>
+
+<section id="settings">
+    <h3>
+        App Settings
+    </h3>
+    
+<div id="settings-item">
+<ul>
+    <li><i class="fa fa-coins"></i> Coin Settings</li>
+    <li><i class="fa fa-camera"></i> Scan Settings</li>
+    <li><i class="fa fa-user"></i> Account Settings</li>
+    <li><i class="fa fa-bell"></i> Notification Settings</li>
+    <li><i class="fa fa-lock"></i> Privacy Settings</li>
+</ul>
+<p>By providing these settings, users can customize their experience, manage their coin collection,
+    and control their data privacy.
+</p>
+</div>
+</section>
+
+<section id="instructions">
+    <h3>
+        User Guide
+    </h3>
+    
+<div id="instructions-item">
+<ul>
+    <h4><i class="fa fa-camera"></i> Scan Coins</h4>
+    <li>Tap the "Capture Coin" button to open to open the phone camera</li>
+    <li>Place the coins on a flat surface</li>
+    <li>Align the coin with the camera viewfinder</li>
+    <li>Tap the screen to capture the coins image</li>
+    <li>Wait for the app to recognize and process the coins</li>
+</ul>
+<ul>
+    <h4><i class="fa fa-history"></i> View Coin History</h4>
+    <li>Tap the "History" icon at the bottom</li>
+    <li>View a list of scanned coins</li>
+    <li>Tap a coin to view its details</li>
+</ul>
+<ul>
+    <h4><i class="fa fa-calculator"></i> Use The Calculator</h4>
+    <li>Tap the "Calculator" icon at the bottom</li>
+    <li>Enter the coin's value and quantity</li>
+    <li>Tap "=" to calculate the total value</li>
+</ul>
+<ul>
+    <h4><i class="fa fa-cog"></i> Access Settings</h4>
+    <li>Tap the three dots on the top right corner</li>
+    <li>Select "Settings" icon at the bottom</li>
+    <li>Adjust app sttings e.g.,Camera settings, notification preferences</li>
+</ul>
+<ul>
+    <h4><i class="fa fa-bullseye"></i> Navigate The App</h4>
+    <li>Tap the bottom tabs to switch between History, Calculator, and Settings</li>
+    <li>Tap the three dots for additional options</li>
+    <li>Tap thee "Capture Coin" button to scan a new coin</li>
+</ul>
+</div>
+</section>
+
+<section id="calculator">
+    <h3>
+        Calculations
+    </h3>
+    
+    <div class="calculator">
+        <div class="calculator-display" id="calculator-display">0</div>
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">DEL</button>
+            <button class="btn" onclick="appendOperator('/')">/</button>
+            <button class="btn" onclick="appendNumber(7)">7</button>
+            <button class="btn" onclick="appendNumber(8)">8</button>
+            <button class="btn" onclick="appendNumber(9)">9</button>
+            <button class="btn" onclick="appendOperator('*')">*</button>
+            <button class="btn" onclick="appendNumber(4)">4</button>
+            <button class="btn" onclick="appendNumber(5)">5</button>
+            <button class="btn" onclick="appendNumber(6)">6</button>
+            <button class="btn" onclick="appendOperator('-')">-</button>
+            <button class="btn" onclick="appendNumber(1)">1</button>
+            <button class="btn" onclick="appendNumber(2)">2</button>
+            <button class="btn" onclick="appendNumber(3)">3</button>
+            <button class="btn" onclick="appendOperator('+')">+</button>
+            <button class="btn" onclick="appendNumber(0)">0</button>
+            <button class="btn" onclick="appendDecimal()">.</button>
+            <button class="btn equals" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+</section>
+
+    <footer>
+<li id="footer-link" onclick="showHistory()">
+    <div>
+        <i class="fa fa-history" aria-hidden="true" id="fa-history"></i>
+    </div>
+    <div id="history-content" >
+        History
+    </div>
+</li>
+<li id="footer-link" onclick="showCalculator()" >
+    <div>
+        <i class="fa fa-calculator" aria-hidden="true" id="fa-calculator"></i>
+    </div>
+    <div id="calculator-content" >
+        Calculator
+    </div>
+</li>
+<li id="footer-link" onclick="showInstructions()">
+    <div><i class="fa fa-book-open" aria-hidden="true" id="fa-book-open" ></i></div>
+    <div id="howTo-content" >How To</div>
+</li>
+<li id="footer-link" onclick="showSettings()">
+    <div>
+        <i class="fa fa-cogs" aria-hidden="true" id="fa-cogs" ></i>
+    </div>
+    <div id="settings-content">
+        Settings
+    </div>
+</li>
+    </footer>
+</body>
+</html>
